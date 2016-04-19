@@ -26,5 +26,5 @@ ENV STRIDER_CLONE_DEST /strider/builds
 USER strider
 
 # Run Strider-CD
-CMD ["sh", "-c", "NODE_ENV=${NODE_ENV:=production} DB_URI=$MONGODB_URL PORT=8080 exec bin/strider"]
-EXPOSE 80
+CMD ["sh", "-c", "NODE_ENV=${NODE_ENV:=production} DB_URI=$MONGODB_URL PORT=5000 exec bin/strider"]
+# EXPOSE 80

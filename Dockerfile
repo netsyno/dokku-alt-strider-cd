@@ -26,5 +26,4 @@ ENV SERVER_NAME http://strider.two.netsyno.com/
 USER strider
 
 # Run Strider-CD
-CMD ["sh", "-c", "NODE_ENV=${NODE_ENV:=production} DB_URI=$MONGODB_URL PORT=5000 exec bin/strider"]
 # EXPOSE 5000

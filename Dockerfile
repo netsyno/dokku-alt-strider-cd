@@ -17,8 +17,8 @@ RUN ln -s nodejs /usr/bin/node
 RUN (rm -rf node_modules || exit 0) && npm install
 
 # Install plugins
-RUN npm install strider-slack
-RUN npm install strider-gitlab
+# RUN npm install strider-slack
+# RUN npm install strider-gitlab
 RUN npm install strider-ssh-deploy
 RUN npm install strider-env strider-python strider-webhooks strider-simple-worker strider-git
 RUN npm install strider-simple-runner
@@ -31,7 +31,7 @@ RUN npm install strider-local strider-runner-core strider-extension-loader
 # Configure Strider-CD
 RUN mkdir -p /strider/builds && chown -R strider:strider /strider
 ENV STRIDER_CLONE_DEST /strider/builds
-ENV SERVER_NAME http://strider.two.netsyno.com/
+ENV SERVER_NAME https://strider.two.netsyno.com/
 # USER strider
 USER root
 

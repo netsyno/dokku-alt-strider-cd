@@ -5,6 +5,7 @@ RUN apt-get update
 RUN apt-get install -y curl build-essential git make
 RUN locale-gen en_US en_US.UTF-8 de_DE de_DE.UTF-8
 RUN apt-get install -y nodejs npm
+RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 # RUN curl https://raw.github.com/isaacs/nave/master/nave.sh > /bin/nave && chmod a+x /bin/nave
 # RUN nave usemain stable
 # RUN ln -s nodejs /usr/bin/node

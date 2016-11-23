@@ -40,8 +40,8 @@ RUN mkdir -p /strider/builds && chown -R strider:strider /strider
 ENV STRIDER_CLONE_DEST /strider/builds
 ENV SERVER_NAME https://strider.two.netsyno.com/
 
-USER strider
-# USER root
+# USER strider
+USER root
 
 # Run Strider-CD
 # EXPOSE 5000

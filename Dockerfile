@@ -1,13 +1,12 @@
-FROM node:7
-
+FROM ubuntu:yakkety
 MAINTAINER Daniel Rech <dr@netsyno.com>
 
 RUN apt-get update
 RUN apt-get install -y curl build-essential git make
 RUN locale-gen en_US en_US.UTF-8 de_DE de_DE.UTF-8
-RUN curl https://raw.github.com/isaacs/nave/master/nave.sh > /bin/nave && chmod a+x /bin/nave
-RUN nave usemain stable
-# RUN apt-get install -y nodejs npm
+RUN apt-get install -y nodejs npm
+# RUN curl https://raw.github.com/isaacs/nave/master/nave.sh > /bin/nave && chmod a+x /bin/nave
+# RUN nave usemain stable
 # RUN ln -s nodejs /usr/bin/node
 # RUN (rm -rf node_modules || exit 0) && npm install
 
@@ -39,8 +38,9 @@ WORKDIR /src
 RUN mkdir -p /strider/builds && chown -R strider:strider /strider
 ENV STRIDER_CLONE_DEST /strider/builds
 ENV SERVER_NAME https://strider.two.netsyno.com/
-# USER strider
-USER root
+
+USER strider
+# USER root
 
 # Run Strider-CD
 # EXPOSE 5000

@@ -6,6 +6,7 @@ RUN apt-get install -y curl build-essential git make
 RUN locale-gen en_US en_US.UTF-8 de_DE de_DE.UTF-8
 RUN apt-get install -y nodejs npm
 RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
+
 # RUN curl https://raw.github.com/isaacs/nave/master/nave.sh > /bin/nave && chmod a+x /bin/nave
 # RUN nave usemain stable
 # RUN ln -s nodejs /usr/bin/node
@@ -15,6 +16,7 @@ RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 RUN useradd -m strider
 RUN git clone https://github.com/Strider-CD/strider.git /src -b v1.9.3
 WORKDIR /src
+RUN (rm -rf node_modules || exit 0) && npm install
 
 # Install plugins
 # RUN npm install strider-slack

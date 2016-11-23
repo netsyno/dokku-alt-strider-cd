@@ -1,9 +1,8 @@
 FROM ubuntu:yakkety
-MAINTAINER Kamil Trzcinski <ayufan@ayufan.eu>
+MAINTAINER Daniel Rech <dr@netsyno.com>
 
-# Configure environment
 RUN apt-get update
-RUN apt-get install -y curl wget build-essential git make
+RUN apt-get install -y curl build-essential git make
 RUN locale-gen en_US en_US.UTF-8 de_DE de_DE.UTF-8
 RUN curl https://raw.github.com/isaacs/nave/master/nave.sh > /bin/nave && chmod a+x /bin/nave
 RUN nave usemain stable
@@ -19,18 +18,18 @@ WORKDIR /src
 # Install plugins
 # RUN npm install strider-slack
 # RUN npm install strider-gitlab
-RUN npm install \
-  strider-ssh-deploy \
-  strider-env \
-  strider-python \
-  strider-webhooks \
-  strider-simple-worker \
-  strider-git \
-  strider-simple-runner \
-  strider-email-notifier \
-  strider-local \
-  strider-runner-core \
-  strider-extension-loader
+#RUN npm install \
+#  strider-ssh-deploy \
+#  strider-env \
+#  strider-python \
+#  strider-webhooks \
+#  strider-simple-worker \
+#  strider-git \
+#  strider-simple-runner \
+#  strider-email-notifier \
+#  strider-local \
+#  strider-runner-core \
+#  strider-extension-loader
 # RUN npm install strider-dot-net
 # RUN npm install strider-sauce
 # RUN npm install strider-hipchat strider-build-badge strider-fleet strider-jelly
